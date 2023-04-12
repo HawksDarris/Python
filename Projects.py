@@ -1,10 +1,16 @@
 import random
 
-projects=['1','2','3','4','5','6','7','8']
+def projectlist():
+    numberofprojects = 8
+    projects=[]
+    for i in range(numberofprojects):
+        projects.append(i)
+    return projects
 
 def printprojects():
+    projects = projectlist()
     for i in range(len(projects)):
-        print("Project",projects[i])
+        print("Project",projects[i]+1)
 
 def getanswer():
     answer = input('Please select a project. ')
