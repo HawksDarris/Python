@@ -98,10 +98,10 @@ def getnumbers():
 
 def printlargest():
     inputlist = getnumbers()
+    inputlist = [int(i) for i in inputlist] # if you don't convert it to ints, it will think 4 is larger than 24 because 2 is before 4 alphabetically in strings.
     print('Your largest number is',sorted(inputlist,reverse=True)[0])
 
 def getwords():
-    print('This project sorts words you give it alphabetically.')
     userinput = input('Enter some words you want to sort separated with spaces and hit enter.\n')
     while hasdigit(userinput):
         print('It should have no digits.')
@@ -121,7 +121,6 @@ def printalphabetically():
 def diceroll():
     i = 0
     ii = 0
-    print('This project simulates a dice game.')
     while True:
         i = random.randint(1,6)
         ii = random.randint(1,6)
@@ -139,7 +138,6 @@ def diceroll():
             break
 
 def getrandomword():
-    print('This project gets a random word from a file I filled with random words.')
     file = open('projectRandomWords','r')
     with file as myfile:
         words = myfile.readline().strip()
@@ -169,7 +167,6 @@ def rockpaperscissors():
     moves, computermoveint = computermove()
     # assign the computer move to the list:
     compmove = moves[computermoveint]
-    print('This project plays Rock, Paper, Scissors.')
 
     while True:
         print(moves[0],'(1)', moves[1],'(2)', moves[2], '(3)')
@@ -213,40 +210,42 @@ def rockpaperscissors():
 
 printprojects()
 answer = getanswer()
-while answer == projects[0]:
+if answer == projects[0]:
+    print('This project will do simple arithmetic with two numbers.')
     try:
         printcalc()
-        break
     except:
         print("Use numerals that make sense, please")
-while answer == projects[1]:
+if answer == projects[1]:
+    print('This project will find the area of a triangle with user input for the base and height.')
     try:
         print("The area of the triangle is:",printarea(),"square units")
-        break
     except:
         print("Use numerals that make sense, please")
-while answer == projects[2]:
+if answer == projects[2]:
+    print('This project prints a times table to 12 for a user-input digit')
     try:
         printmultiplicative()
-        break
     except:
         print("Use numerals that make sense, please")
-while answer == projects[3]:
-    print('This project compares numbers you give it and returns the largest.')
+if answer == projects[3]:
+    print('This project compares numbers the user gives it and prints the largest.')
     try:
         printlargest()
-        break
     except:
         print("Use numerals that make sense, please")
-while answer == projects[4]:
+if answer == projects[4]:
+    print('This project prints words you give it after sorting alphabetically.')
     try:
         printalphabetically()
-        break
     except:
         print("Use letters, not numbers, please")
 if answer == projects[5]:
+    print('This project simulates a dice game.')
     diceroll()
 if answer == projects[6]:
+    print('This project gets a random word from a file I put random words in.')
     getrandomword()
 if answer == projects[7]:
+    print('This project plays Rock, Paper, Scissors.')
     rockpaperscissors()
