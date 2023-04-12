@@ -1,5 +1,3 @@
-# Project 1: Simple calculator
-
 import random
 
 projects=['1','2','3','4','5','6','7','8']
