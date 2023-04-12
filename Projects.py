@@ -4,7 +4,7 @@ def projectlist():
     numberofprojects = 8
     projects=[]
     for i in range(numberofprojects):
-        projects.append(i)
+        projects.append(i+1)
     return projects
 
 def printprojects():
@@ -13,7 +13,8 @@ def printprojects():
         print("Project",projects[i]+1)
 
 def getanswer():
-    answer = input('Please select a project. ')
+    answer = int(input('Please select a project. '))
+    projects = projectlist()
     while True:
         if not answer in projects:
             print('You must select a project number from the list with a numeral.')
@@ -216,6 +217,7 @@ def rockpaperscissors():
 
 printprojects()
 answer = getanswer()
+projects = projectlist()
 if answer == projects[0]:
     print('This project will do simple arithmetic with two numbers.')
     try:
