@@ -88,7 +88,6 @@ def hasletter(str1='a'):
 
 
 def getnumbers():
-    print('This project compares numbers you give it and returns the largest.')
     userinput = input('Enter some numbers separated with spaces and hit enter.\n')
     while hasletter(userinput):
         print('It should have only numbers and spaces.')
@@ -233,6 +232,7 @@ while answer == projects[2]:
     except:
         print("Use numerals that make sense, please")
 while answer == projects[3]:
+    print('This project compares numbers you give it and returns the largest.')
     try:
         printlargest()
         break
@@ -248,6 +248,5 @@ if answer == projects[5]:
     diceroll()
 if answer == projects[6]:
     getrandomword()
-while answer == projects[7]:
-
+if answer == projects[7]:
     rockpaperscissors()
